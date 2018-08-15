@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2042
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5BFE72B3-7225-4CD4-B850-1CF301373752}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AVK.Web", "AVK.Retail\AVK.Web\AVK.Web.csproj", "{A2991813-2AEC-42BC-A633-D7BB748B5E48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "AVK.Retail\DAL\DAL.csproj", "{F08358D9-6288-4F64-895E-E643F56F2636}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A2991813-2AEC-42BC-A633-D7BB748B5E48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2991813-2AEC-42BC-A633-D7BB748B5E48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2991813-2AEC-42BC-A633-D7BB748B5E48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2991813-2AEC-42BC-A633-D7BB748B5E48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F08358D9-6288-4F64-895E-E643F56F2636}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F08358D9-6288-4F64-895E-E643F56F2636}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F08358D9-6288-4F64-895E-E643F56F2636}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F08358D9-6288-4F64-895E-E643F56F2636}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A2991813-2AEC-42BC-A633-D7BB748B5E48} = {5BFE72B3-7225-4CD4-B850-1CF301373752}
+		{F08358D9-6288-4F64-895E-E643F56F2636} = {5BFE72B3-7225-4CD4-B850-1CF301373752}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E61EE890-166E-40FE-BDA7-54EF88327D9D}
+	EndGlobalSection
+EndGlobal
