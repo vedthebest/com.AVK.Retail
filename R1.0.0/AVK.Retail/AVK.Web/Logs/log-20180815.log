@@ -98,3 +98,55 @@ System.AggregateException: One or more errors occurred. (The remote party closed
    at System.Net.WebSockets.ManagedWebSocket.ReceiveAsyncPrivate[TWebSocketReceiveResultGetter,TWebSocketReceiveResult](Memory`1 payloadBuffer, CancellationToken cancellationToken, TWebSocketReceiveResultGetter resultGetter)
    at System.Net.WebSockets.ManagedWebSocket.ReceiveAsyncPrivate[TWebSocketReceiveResultGetter,TWebSocketReceiveResult](Memory`1 payloadBuffer, CancellationToken cancellationToken, TWebSocketReceiveResultGetter resultGetter)<---
 
+2018-08-15T18:04:23.1277016+05:30 0HLG2L3QJC127:00000001 [INF] "Bearer" was not authenticated. Failure message: "Authentication failed because the access token was invalid." (48071232)
+2018-08-15T18:04:23.1277016+05:30 0HLG2L3QJC126:00000001 [INF] "Bearer" was not authenticated. Failure message: "Authentication failed because the access token was invalid." (48071232)
+2018-08-15T18:04:23.1736808+05:30 0HLG2L3QJC126:00000001 [INF] AuthenticationScheme: "Bearer" was challenged. (d45f1f38)
+2018-08-15T18:04:23.1736808+05:30 0HLG2L3QJC127:00000001 [INF] AuthenticationScheme: "Bearer" was challenged. (d45f1f38)
+2018-08-15T18:04:23.2690821+05:30 0HLG2L3QJC127:00000002 [INF] The token request was successfully extracted from the HTTP request: "{
+  \"refresh_token\": \"[removed for security reasons]\",
+  \"grant_type\": \"refresh_token\",
+  \"scope\": \"openid email phone profile offline_access roles\"
+}". (ebc01284)
+2018-08-15T18:04:23.2930261+05:30 0HLG2L3QJC127:00000002 [DBG] The token request validation process was partially skipped because the 'client_id' parameter was missing or empty. (fcec36a0)
+2018-08-15T18:04:23.2933585+05:30 0HLG2L3QJC127:00000002 [INF] The token request was successfully validated. (d7e51e65)
+2018-08-15T18:04:23.3144506+05:30 0HLG2L3QJC127:00000002 [ERR] The token request was rejected because the authorization code or the refresh token was invalid. (4f68f9ee)
+2018-08-15T18:04:23.3237439+05:30 0HLG2L3QJC127:00000002 [INF] The token response was successfully returned: "{
+  \"error\": \"invalid_grant\",
+  \"error_description\": \"The specified refresh token is invalid.\"
+}". (12d98310)
+2018-08-15T18:04:29.0187623+05:30 0HLG2L3QJC127:00000003 [INF] The token request was successfully extracted from the HTTP request: "{
+  \"username\": \"admin\",
+  \"password\": \"[removed for security reasons]\",
+  \"grant_type\": \"password\",
+  \"scope\": \"openid email phone profile offline_access roles\"
+}". (ebc01284)
+2018-08-15T18:04:29.0197720+05:30 0HLG2L3QJC127:00000003 [DBG] The token request validation process was partially skipped because the 'client_id' parameter was missing or empty. (fcec36a0)
+2018-08-15T18:04:29.0198466+05:30 0HLG2L3QJC127:00000003 [INF] The token request was successfully validated. (d7e51e65)
+2018-08-15T18:04:29.0357704+05:30 0HLG2L3QJC127:00000003 [DBG] The default token request handling was skipped from user code. (72afae05)
+2018-08-15T18:04:30.8702134+05:30 0HLG2L3QJC127:00000003 [INF] An ad hoc authorization was automatically created and associated with an unknown application: "937c6958-32c2-4790-bab4-3a5bee9f83a1". (b5fe4ad7)
+2018-08-15T18:04:30.9033056+05:30 0HLG2L3QJC127:00000003 [DBG] '"AspNet.Identity.SecurityStamp"' was excluded from the access token claims. (ed8f369e)
+2018-08-15T18:04:30.9034421+05:30 0HLG2L3QJC127:00000003 [DBG] '"fullname"' was excluded from the access token claims. (ed8f369e)
+2018-08-15T18:04:30.9035104+05:30 0HLG2L3QJC127:00000003 [DBG] '"email"' was excluded from the access token claims. (ed8f369e)
+2018-08-15T18:04:30.9035613+05:30 0HLG2L3QJC127:00000003 [DBG] '"phone"' was excluded from the access token claims. (ed8f369e)
+2018-08-15T18:04:31.0583847+05:30 0HLG2L3QJC127:00000003 [DBG] '"AspNet.Identity.SecurityStamp"' was excluded from the identity token claims. (7dcd2335)
+2018-08-15T18:04:31.0806135+05:30 0HLG2L3QJC127:00000003 [INF] The token response was successfully returned: "{
+  \"token_type\": \"Bearer\",
+  \"access_token\": \"[removed for security reasons]\",
+  \"expires_in\": 3600,
+  \"refresh_token\": \"[removed for security reasons]\",
+  \"id_token\": \"[removed for security reasons]\"
+}". (12d98310)
+2018-08-15T18:04:59.6992720+05:30 0HLG2L3QJC127:00000004 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-08-15T18:05:02.9054229+05:30 0HLG2L3QJC126:00000002 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-08-15T18:05:02.9059467+05:30 0HLG2L3QJC126:00000002 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-08-15T18:05:02.9127429+05:30 0HLG2L3QJC127:00000005 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-08-15T18:05:02.9129639+05:30 0HLG2L3QJC127:00000005 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-08-15T18:05:13.0627358+05:30 0HLG2L3QJC127:00000006 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-08-15T18:05:13.0629956+05:30 0HLG2L3QJC127:00000006 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-08-15T18:05:13.0854526+05:30 0HLG2L3QJC126:00000003 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-08-15T18:05:14.7003478+05:30 0HLG2L3QJC126:00000004 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-08-15T18:05:14.7006119+05:30 0HLG2L3QJC126:00000004 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-08-15T18:05:14.7027765+05:30 0HLG2L3QJC127:00000007 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-08-15T18:05:14.7032696+05:30 0HLG2L3QJC127:00000007 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-08-15T18:05:33.8075127+05:30 0HLG2L3QJC126:00000005 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-08-15T18:05:35.8997552+05:30 0HLG2L3QJC126:00000006 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
