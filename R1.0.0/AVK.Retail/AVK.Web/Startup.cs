@@ -1,8 +1,3 @@
-
-
-
-
-
 using AspNet.Security.OpenIdConnect.Primitives;
 using AutoMapper;
 using DAL;
@@ -45,7 +40,7 @@ namespace AVK.Web
         {
             services.AddDbContext<ApplicationDbContext>(options =>
             {
-                options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"], b => b.MigrationsAssembly("AVK.Web"));
+                options.UseNpgsql(Configuration["ConnectionStrings:Default"], b => b.MigrationsAssembly("AVK.Web"));
                 options.UseOpenIddict();
             });
 

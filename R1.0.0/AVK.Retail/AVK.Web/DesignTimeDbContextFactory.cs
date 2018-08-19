@@ -1,8 +1,3 @@
-
-
-
-
-
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -30,7 +25,8 @@ namespace AVK.Web
 
             var builder = new DbContextOptionsBuilder<ApplicationDbContext>();
 
-            builder.UseSqlServer(configuration["ConnectionStrings:DefaultConnection"], b => b.MigrationsAssembly("AVK.Web"));
+            //builder.UseSqlServer(configuration["ConnectionStrings:DefaultConnection"], b => b.MigrationsAssembly("AVK.Web"));
+            builder.UseNpgsql(configuration["ConnectionStrings:Default"], b => b.MigrationsAssembly("AVK.Web"));
             builder.UseOpenIddict();
 
             return new ApplicationDbContext(builder.Options);

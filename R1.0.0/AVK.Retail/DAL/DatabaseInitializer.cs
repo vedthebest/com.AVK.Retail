@@ -79,7 +79,7 @@ namespace DAL
                     Email = "uchiha@narutoverse.com",
                     PhoneNumber = "+81123456789",
                     Address = "Some fictional Address, Street 123, Konoha",
-                    City = "Konoha",
+                    //City = "Konoha",
                     Gender = Gender.Male,
                     DateCreated = DateTime.UtcNow,
                     DateModified = DateTime.UtcNow
@@ -92,7 +92,7 @@ namespace DAL
                     PhoneNumber = "+18585858",
                     Address = @"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.
                     Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet",
-                    City = "Lorem Ipsum",
+                   // City = "Lorem Ipsum",
                     Gender = Gender.Male,
                     DateCreated = DateTime.UtcNow,
                     DateModified = DateTime.UtcNow
@@ -105,7 +105,7 @@ namespace DAL
                     PhoneNumber = "+18585858",
                     Address = @"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.
                     Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet",
-                    City = "Lorem Ipsum",
+                    //City = "Lorem Ipsum",
                     Gender = Gender.Male,
                     DateCreated = DateTime.UtcNow,
                     DateModified = DateTime.UtcNow

@@ -1,13 +1,5 @@
-﻿
-
-
-
-
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using DAL.Models.Interfaces;
 
@@ -39,6 +31,7 @@ namespace DAL.Models
         public string UpdatedBy { get; set; }
         public DateTime CreatedDate { get; set; }
         public DateTime UpdatedDate { get; set; }
+        public int Deleted { get; set; }
 
 
 

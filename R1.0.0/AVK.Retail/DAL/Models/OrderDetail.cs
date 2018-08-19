@@ -1,18 +1,11 @@
-﻿
-
-
-
-
-using System;
-using System.Linq;
-
-namespace DAL.Models
+﻿namespace DAL.Models
 {
     public class OrderDetail : AuditableEntity
     {
         public int Id { get; set; }
         public decimal UnitPrice { get; set; }
-        public int Quantity { get; set; }
+        public Unit Unit { get; set; }
+        public decimal Quantity { get; set; }
         public decimal Discount { get; set; }
 
 
@@ -21,5 +14,13 @@ namespace DAL.Models
 
         public int OrderId { get; set; }
         public Order Order { get; set; }
+    }
+
+
+    public enum Unit
+    {
+        MG = 0,
+        G = 1,
+        KG = 2
     }
 }

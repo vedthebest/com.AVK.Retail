@@ -1,18 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
 
-
 namespace DAL.Models
 {
-    public class Order : AuditableEntity
+    public class Loan : AuditableEntity
     {
         public int Id { get; set; }
-        public decimal Discount { get; set; }
+
         public string Comments { get; set; }
+
         public DateTime DateCreated { get; set; }
         public DateTime DateModified { get; set; }
+
         public decimal UnpaidAmount { get; set; }
         public decimal PaidAmount { get; set; }
+
+        public Decimal Interest { get; set; }
+
+        public DateTime LoanStartDate { get; set; }
+        public DateTime LoanEndDate { get; set; }
+
+        public DateTime MaxLoanPeriod { get; set; }
+
         public PaymentStatus PaymentStatus { get; set; }
 
         public string CashierId { get; set; }
@@ -25,12 +34,5 @@ namespace DAL.Models
         public Organization Organization { get; set; }
 
         public ICollection<OrderDetail> OrderDetails { get; set; }
-    }
-
-    public enum PaymentStatus
-    {
-        Unpaid = 0,
-        Paid = 1,
-        PartialPayment = 2
     }
 }

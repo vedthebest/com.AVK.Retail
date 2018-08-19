@@ -1,11 +1,4 @@
-﻿
-
-
-
-
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System;
 
 namespace DAL.Models.Interfaces
 {
@@ -15,5 +8,6 @@ namespace DAL.Models.Interfaces
         string UpdatedBy { get; set; }
         DateTime CreatedDate { get; set; }
         DateTime UpdatedDate { get; set; }
+        int Deleted { get; set; }
     }
 }

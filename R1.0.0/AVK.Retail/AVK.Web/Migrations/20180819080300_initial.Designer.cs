@@ -3,23 +3,23 @@ using System;
 using DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace AVK.Web.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20180708133354_Initial")]
-    partial class Initial
+    [Migration("20180819080300_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
+                .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn)
                 .HasAnnotation("ProductVersion", "2.1.1-rtm-30846")
-                .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             modelBuilder.Entity("DAL.Models.ApplicationRole", b =>
                 {
@@ -32,6 +32,8 @@ namespace AVK.Web.Migrations
                     b.Property<string>("CreatedBy");
 
                     b.Property<DateTime>("CreatedDate");
+
+                    b.Property<int>("Deleted");
 
                     b.Property<string>("Description");
 
@@ -49,8 +51,7 @@ namespace AVK.Web.Migrations
 
                     b.HasIndex("NormalizedName")
                         .IsUnique()
-                        .HasName("RoleNameIndex")
-                        .HasFilter("[NormalizedName] IS NOT NULL");
+                        .HasName("RoleNameIndex");
 
                     b.ToTable("AspNetRoles");
                 });
@@ -70,6 +71,8 @@ namespace AVK.Web.Migrations
                     b.Property<string>("CreatedBy");
 
                     b.Property<DateTime>("CreatedDate");
+
+                    b.Property<int>("Deleted");
 
                     b.Property<string>("Email")
                         .HasMaxLength(256);
@@ -116,22 +119,43 @@ namespace AVK.Web.Migrations
 
                     b.HasIndex("NormalizedUserName")
                         .IsUnique()
-                        .HasName("UserNameIndex")
-                        .HasFilter("[NormalizedUserName] IS NOT NULL");
+                        .HasName("UserNameIndex");
 
                     b.ToTable("AspNetUsers");
+                });
+
+            modelBuilder.Entity("DAL.Models.City", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("CreatedBy")
+                        .HasMaxLength(256);
+
+                    b.Property<DateTime>("CreatedDate");
+
+                    b.Property<int>("Deleted");
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("State");
+
+                    b.Property<string>("UpdatedBy")
+                        .HasMaxLength(256);
+
+                    b.Property<DateTime>("UpdatedDate");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("City");
                 });
 
             modelBuilder.Entity("DAL.Models.Customer", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("Address");
-
-                    b.Property<string>("City")
-                        .HasMaxLength(50);
 
                     b.Property<string>("CreatedBy")
                         .HasMaxLength(256);
@@ -141,6 +165,8 @@ namespace AVK.Web.Migrations
                     b.Property<DateTime>("DateCreated");
 
                     b.Property<DateTime>("DateModified");
+
+                    b.Property<int>("Deleted");
 
                     b.Property<string>("Email")
                         .HasMaxLength(100);
@@ -160,18 +186,75 @@ namespace AVK.Web.Migrations
 
                     b.Property<DateTime>("UpdatedDate");
 
+                    b.Property<int>("VillageId");
+
                     b.HasKey("Id");
 
                     b.HasIndex("Name");
 
+                    b.HasIndex("VillageId");
+
                     b.ToTable("AppCustomers");
+                });
+
+            modelBuilder.Entity("DAL.Models.Loan", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("CashierId");
+
+                    b.Property<string>("Comments");
+
+                    b.Property<string>("CreatedBy")
+                        .HasMaxLength(256);
+
+                    b.Property<DateTime>("CreatedDate");
+
+                    b.Property<int>("CustomerId");
+
+                    b.Property<DateTime>("DateCreated");
+
+                    b.Property<DateTime>("DateModified");
+
+                    b.Property<int>("Deleted");
+
+                    b.Property<decimal>("Interest");
+
+                    b.Property<DateTime>("LoanEndDate");
+
+                    b.Property<DateTime>("LoanStartDate");
+
+                    b.Property<DateTime>("MaxLoanPeriod");
+
+                    b.Property<int>("OrganizationId");
+
+                    b.Property<decimal>("PaidAmount");
+
+                    b.Property<int>("PaymentStatus");
+
+                    b.Property<decimal>("UnpaidAmount");
+
+                    b.Property<string>("UpdatedBy")
+                        .HasMaxLength(256);
+
+                    b.Property<DateTime>("UpdatedDate");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CashierId");
+
+                    b.HasIndex("CustomerId");
+
+                    b.HasIndex("OrganizationId");
+
+                    b.ToTable("Loan");
                 });
 
             modelBuilder.Entity("DAL.Models.Order", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("CashierId");
 
@@ -189,7 +272,17 @@ namespace AVK.Web.Migrations
 
                     b.Property<DateTime>("DateModified");
 
+                    b.Property<int>("Deleted");
+
                     b.Property<decimal>("Discount");
+
+                    b.Property<int>("OrganizationId");
+
+                    b.Property<decimal>("PaidAmount");
+
+                    b.Property<int>("PaymentStatus");
+
+                    b.Property<decimal>("UnpaidAmount");
 
                     b.Property<string>("UpdatedBy")
                         .HasMaxLength(256);
@@ -202,27 +295,34 @@ namespace AVK.Web.Migrations
 
                     b.HasIndex("CustomerId");
 
+                    b.HasIndex("OrganizationId");
+
                     b.ToTable("AppOrders");
                 });
 
             modelBuilder.Entity("DAL.Models.OrderDetail", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("CreatedBy")
                         .HasMaxLength(256);
 
                     b.Property<DateTime>("CreatedDate");
 
+                    b.Property<int>("Deleted");
+
                     b.Property<decimal>("Discount");
+
+                    b.Property<int?>("LoanId");
 
                     b.Property<int>("OrderId");
 
                     b.Property<int>("ProductId");
 
-                    b.Property<int>("Quantity");
+                    b.Property<decimal>("Quantity");
+
+                    b.Property<int>("Unit");
 
                     b.Property<decimal>("UnitPrice");
 
@@ -233,6 +333,8 @@ namespace AVK.Web.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("LoanId");
+
                     b.HasIndex("OrderId");
 
                     b.HasIndex("ProductId");
@@ -240,11 +342,48 @@ namespace AVK.Web.Migrations
                     b.ToTable("AppOrderDetails");
                 });
 
+            modelBuilder.Entity("DAL.Models.Organization", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Address");
+
+                    b.Property<string>("CreatedBy")
+                        .HasMaxLength(256);
+
+                    b.Property<DateTime>("CreatedDate");
+
+                    b.Property<DateTime>("DateCreated");
+
+                    b.Property<DateTime>("DateModified");
+
+                    b.Property<int>("Deleted");
+
+                    b.Property<string>("Email");
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("PhoneNumber");
+
+                    b.Property<string>("UpdatedBy")
+                        .HasMaxLength(256);
+
+                    b.Property<DateTime>("UpdatedDate");
+
+                    b.Property<int>("VillageId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("VillageId");
+
+                    b.ToTable("Organization");
+                });
+
             modelBuilder.Entity("DAL.Models.Product", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<decimal>("BuyingPrice");
 
@@ -256,6 +395,8 @@ namespace AVK.Web.Migrations
                     b.Property<DateTime>("DateCreated");
 
                     b.Property<DateTime>("DateModified");
+
+                    b.Property<int>("Deleted");
 
                     b.Property<string>("Description")
                         .HasMaxLength(500);
@@ -276,7 +417,11 @@ namespace AVK.Web.Migrations
 
                     b.Property<int>("ProductCategoryId");
 
+                    b.Property<decimal>("QuantityInStock");
+
                     b.Property<decimal>("SellingPrice");
+
+                    b.Property<int>("Unit");
 
                     b.Property<int>("UnitsInStock");
 
@@ -299,8 +444,7 @@ namespace AVK.Web.Migrations
             modelBuilder.Entity("DAL.Models.ProductCategory", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("CreatedBy")
                         .HasMaxLength(256);
@@ -310,6 +454,8 @@ namespace AVK.Web.Migrations
                     b.Property<DateTime>("DateCreated");
 
                     b.Property<DateTime>("DateModified");
+
+                    b.Property<int>("Deleted");
 
                     b.Property<string>("Description")
                         .HasMaxLength(500);
@@ -330,11 +476,38 @@ namespace AVK.Web.Migrations
                     b.ToTable("AppProductCategories");
                 });
 
+            modelBuilder.Entity("DAL.Models.Village", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("CityId");
+
+                    b.Property<string>("CreatedBy")
+                        .HasMaxLength(256);
+
+                    b.Property<DateTime>("CreatedDate");
+
+                    b.Property<int>("Deleted");
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("UpdatedBy")
+                        .HasMaxLength(256);
+
+                    b.Property<DateTime>("UpdatedDate");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CityId");
+
+                    b.ToTable("Village");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("ClaimType");
 
@@ -353,8 +526,7 @@ namespace AVK.Web.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("ClaimType");
 
@@ -546,10 +718,34 @@ namespace AVK.Web.Migrations
                     b.HasIndex("AuthorizationId");
 
                     b.HasIndex("ReferenceId")
-                        .IsUnique()
-                        .HasFilter("[ReferenceId] IS NOT NULL");
+                        .IsUnique();
 
                     b.ToTable("OpenIddictTokens");
+                });
+
+            modelBuilder.Entity("DAL.Models.Customer", b =>
+                {
+                    b.HasOne("DAL.Models.Village", "Village")
+                        .WithMany("Customers")
+                        .HasForeignKey("VillageId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("DAL.Models.Loan", b =>
+                {
+                    b.HasOne("DAL.Models.ApplicationUser", "Cashier")
+                        .WithMany()
+                        .HasForeignKey("CashierId");
+
+                    b.HasOne("DAL.Models.Customer", "Customer")
+                        .WithMany()
+                        .HasForeignKey("CustomerId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("DAL.Models.Organization", "Organization")
+                        .WithMany("Loans")
+                        .HasForeignKey("OrganizationId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("DAL.Models.Order", b =>
@@ -562,10 +758,19 @@ namespace AVK.Web.Migrations
                         .WithMany("Orders")
                         .HasForeignKey("CustomerId")
                         .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("DAL.Models.Organization", "Organization")
+                        .WithMany("Orders")
+                        .HasForeignKey("OrganizationId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("DAL.Models.OrderDetail", b =>
                 {
+                    b.HasOne("DAL.Models.Loan")
+                        .WithMany("OrderDetails")
+                        .HasForeignKey("LoanId");
+
                     b.HasOne("DAL.Models.Order", "Order")
                         .WithMany("OrderDetails")
                         .HasForeignKey("OrderId")
@@ -574,6 +779,14 @@ namespace AVK.Web.Migrations
                     b.HasOne("DAL.Models.Product", "Product")
                         .WithMany("OrderDetails")
                         .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("DAL.Models.Organization", b =>
+                {
+                    b.HasOne("DAL.Models.Village", "Village")
+                        .WithMany("Organizations")
+                        .HasForeignKey("VillageId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
@@ -587,6 +800,14 @@ namespace AVK.Web.Migrations
                     b.HasOne("DAL.Models.ProductCategory", "ProductCategory")
                         .WithMany("Products")
                         .HasForeignKey("ProductCategoryId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("DAL.Models.Village", b =>
+                {
+                    b.HasOne("DAL.Models.City", "City")
+                        .WithMany("Villages")
+                        .HasForeignKey("CityId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

@@ -21,6 +21,8 @@ namespace DAL.Models
         public decimal BuyingPrice { get; set; }
         public decimal SellingPrice { get; set; }
         public int UnitsInStock { get; set; }
+        public Decimal QuantityInStock { get; set; }
+        public Unit Unit { get; set; }
         public bool IsActive { get; set; }
         public bool IsDiscontinued { get; set; }
         public DateTime DateCreated { get; set; }

@@ -1,15 +1,8 @@
-﻿
-
-
-
-
-using DAL.Models;
+﻿using DAL.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 using DAL.Models.Interfaces;
@@ -45,7 +38,7 @@ namespace DAL
             builder.Entity<Customer>().HasIndex(c => c.Name);
             builder.Entity<Customer>().Property(c => c.Email).HasMaxLength(100);
             builder.Entity<Customer>().Property(c => c.PhoneNumber).IsUnicode(false).HasMaxLength(30);
-            builder.Entity<Customer>().Property(c => c.City).HasMaxLength(50);
+           // builder.Entity<Customer>().Property(c => c.Village).HasMaxLength(50);
             builder.Entity<Customer>().ToTable($"App{nameof(this.Customers)}");
 
             builder.Entity<ProductCategory>().Property(p => p.Name).IsRequired().HasMaxLength(100);
