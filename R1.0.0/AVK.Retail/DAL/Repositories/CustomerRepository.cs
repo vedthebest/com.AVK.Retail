@@ -31,6 +31,7 @@ namespace DAL.Repositories
             return _appContext.Customers
                 .Include(c => c.Orders).ThenInclude(o => o.OrderDetails).ThenInclude(d => d.Product)
                 .Include(c => c.Orders).ThenInclude(o => o.Cashier)
+                .Include(c => c.Village)
                 .OrderBy(c => c.Name)
                 .ToList();
         }

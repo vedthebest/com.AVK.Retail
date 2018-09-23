@@ -1,0 +1,49 @@
+2018-09-08T11:29:12.5627742+05:30 0HLGL9VALG9UP:0000000A [INF] "Bearer" was not authenticated. Failure message: "Authentication failed because the access token was expired." (48071232)
+2018-09-08T11:29:12.5627738+05:30 0HLGL9VALG9V5:00000003 [INF] "Bearer" was not authenticated. Failure message: "Authentication failed because the access token was expired." (48071232)
+2018-09-08T11:29:12.6152891+05:30 0HLGL9VALG9UP:0000000A [INF] AuthenticationScheme: "Bearer" was challenged. (d45f1f38)
+2018-09-08T11:29:12.6169490+05:30 0HLGL9VALG9V5:00000003 [INF] AuthenticationScheme: "Bearer" was challenged. (d45f1f38)
+2018-09-08T11:29:12.7515296+05:30 0HLGL9VALG9V5:00000004 [INF] The token request was successfully extracted from the HTTP request: "{
+  \"refresh_token\": \"[removed for security reasons]\",
+  \"grant_type\": \"refresh_token\",
+  \"scope\": \"openid email phone profile offline_access roles\"
+}". (ebc01284)
+2018-09-08T11:29:12.7974907+05:30 0HLGL9VALG9V5:00000004 [DBG] The token request validation process was partially skipped because the 'client_id' parameter was missing or empty. (fcec36a0)
+2018-09-08T11:29:12.8004744+05:30 0HLGL9VALG9V5:00000004 [INF] The token request was successfully validated. (d7e51e65)
+2018-09-08T11:29:13.4476062+05:30 0HLGL9VALG9V5:00000004 [DBG] The default token request handling was skipped from user code. (72afae05)
+2018-09-08T11:29:36.5595149+05:30 0HLGL9VALG9UP:0000000B [INF] "Bearer" was not authenticated. Failure message: "Authentication failed because the access token was expired." (48071232)
+2018-09-08T11:29:36.5637200+05:30 0HLGL9VALG9UP:0000000B [INF] AuthenticationScheme: "Bearer" was challenged. (d45f1f38)
+2018-09-08T11:29:36.5676308+05:30 0HLGL9VALG9V7:00000003 [INF] "Bearer" was not authenticated. Failure message: "Authentication failed because the access token was expired." (48071232)
+2018-09-08T11:29:36.5738321+05:30 0HLGL9VALG9V7:00000003 [INF] AuthenticationScheme: "Bearer" was challenged. (d45f1f38)
+2018-09-08T11:29:36.6218943+05:30 0HLGL9VALG9V5:00000004 [DBG] AuthenticationScheme: "ASOS" was successfully authenticated. (1805f3b3)
+2018-09-08T11:29:37.3628646+05:30 0HLGL9VALG9V5:00000004 [INF] The expiration date of the refresh token '"5861d812-92a1-4260-855f-2cb32505a956"' was automatically updated: 09/22/2018 05:59:36 +00:00. (3e1903c1)
+2018-09-08T11:29:37.3902076+05:30 0HLGL9VALG9V5:00000004 [DBG] The access token scopes will be limited to the scopes requested by the client application: "openid, email, phone, profile, offline_access, roles". (da314d7b)
+2018-09-08T11:29:37.4229574+05:30 0HLGL9VALG9V5:00000004 [DBG] '"AspNet.Identity.SecurityStamp"' was excluded from the access token claims. (ed8f369e)
+2018-09-08T11:29:37.4265586+05:30 0HLGL9VALG9V5:00000004 [DBG] '"fullname"' was excluded from the access token claims. (ed8f369e)
+2018-09-08T11:29:37.4303367+05:30 0HLGL9VALG9V5:00000004 [DBG] '"email"' was excluded from the access token claims. (ed8f369e)
+2018-09-08T11:29:37.4338400+05:30 0HLGL9VALG9V5:00000004 [DBG] '"phone"' was excluded from the access token claims. (ed8f369e)
+2018-09-08T11:29:37.4738428+05:30 0HLGL9VALG9V5:00000004 [DBG] '"AspNet.Identity.SecurityStamp"' was excluded from the identity token claims. (7dcd2335)
+2018-09-08T11:29:37.5413089+05:30 0HLGL9VALG9V5:00000004 [INF] The token response was successfully returned: "{
+  \"token_type\": \"Bearer\",
+  \"access_token\": \"[removed for security reasons]\",
+  \"expires_in\": 3600,
+  \"id_token\": \"[removed for security reasons]\"
+}". (12d98310)
+2018-09-08T11:29:37.5895777+05:30 0HLGL9VALG9V7:00000004 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-09-08T11:29:37.5897565+05:30 0HLGL9VALG9UP:0000000C [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-09-08T11:29:37.5942237+05:30 0HLGL9VALG9V7:00000004 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-09-08T11:29:37.5982287+05:30 0HLGL9VALG9UP:0000000C [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-09-08T11:29:37.6009102+05:30 0HLGL9VALG9V5:00000005 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-09-08T11:29:38.0110078+05:30 0HLGL9VALG9V7:00000005 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-09-08T11:29:38.0195224+05:30 0HLGL9VALG9V7:00000005 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-09-08T11:46:49.3527951+05:30 0HLGL9VALG9VD:00000008 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-09-08T11:46:49.3590128+05:30 0HLGL9VALG9VD:00000008 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-09-08T11:46:49.3606631+05:30 0HLGL9VALG9VB:00000005 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-09-08T11:46:49.3896510+05:30 0HLGL9VALG9VB:00000005 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-09-08T11:48:02.3488193+05:30 0HLGL9VALG9VG:0000000A [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-09-08T11:48:02.3529775+05:30 0HLGL9VALG9VG:0000000A [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-09-08T11:48:02.3629949+05:30 0HLGL9VALG9VD:00000018 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-09-08T11:48:02.3774057+05:30 0HLGL9VALG9VD:00000018 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-09-08T11:48:06.8961942+05:30 0HLGL9VALG9VM:00000003 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-09-08T11:48:06.8961828+05:30 0HLGL9VALG9VL:0000000A [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-09-08T11:48:06.9097774+05:30 0HLGL9VALG9VM:00000003 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-09-08T11:48:06.9205794+05:30 0HLGL9VALG9VL:0000000A [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)

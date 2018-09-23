@@ -1,14 +1,6 @@
-﻿
-
-
-
-
-using FluentValidation;
-using System;
+﻿using FluentValidation;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using DAL.Models;
 
 
 namespace AVK.Web.ViewModels
@@ -20,7 +12,7 @@ namespace AVK.Web.ViewModels
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
         public string Address { get; set; }
-        public string City { get; set; }
+        public string VillageId { get; set; }
         public string Gender { get; set; }
 
         public ICollection<OrderViewModel> Orders { get; set; }

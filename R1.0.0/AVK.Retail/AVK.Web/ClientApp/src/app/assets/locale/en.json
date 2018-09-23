@@ -128,6 +128,39 @@
       "Saving": "Saving..."
     }
   },
+  "customers": {
+    "management": {
+      "Search": "Search for customer...",
+      "NewCustomer": "New Custome",
+      "Edit": "Edit",
+      "Delete": "Delete",
+      "EditCustome": "Edit Customer \"{{name}}\"",
+      "Title": "Title",
+      "FullName": "Full Name",
+      "Email": "Email",
+      "Gender": "Gender",
+      "PhoneNumber": "Phone Number",
+      "City": "City",
+      "Address": "Address"
+    },
+    "editor": {
+
+      "JobTitle": "Job Title: ",
+      "NameRequired": "Name is required (minimum of 2 and maximum of 200 characters)",
+      "Email": "Email:",
+      "EmailRequired": "Email address is required (maximum of 200 characters)",
+      "InvalidEmail": "Specified email is not valid",
+      "Orders": "Orders:",
+      "FullName": " Full Name:",
+      "PhoneNumber": "Phone #:",
+      "Enabled": "Enabled",
+      "Close": "Close",
+      "Edit": "Edit",
+      "Cancel": "Cancel",
+      "Save": "Save",
+      "Saving": "Saving..."
+    }
+  },
   "roles": {
     "management": {
       "Search": "Search for role...",

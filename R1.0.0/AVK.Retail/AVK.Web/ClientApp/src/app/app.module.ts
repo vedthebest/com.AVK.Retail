@@ -32,6 +32,8 @@ import { NotificationService } from './services/notification.service';
 import { NotificationEndpoint } from './services/notification-endpoint.service';
 import { AccountService } from './services/account.service';
 import { AccountEndpoint } from './services/account-endpoint.service';
+import { CustomerService } from './services/customer.service';
+import { CustomerEndpoint } from './services/customer-endpoint.service';
 
 import { EqualValidator } from './directives/equal-validator.directive';
 import { LastElementDirective } from './directives/last-element.directive';
@@ -60,6 +62,7 @@ import { SearchBoxComponent } from "./components/controls/search-box.component";
 import { UserInfoComponent } from "./components/controls/user-info.component";
 import { UserPreferencesComponent } from "./components/controls/user-preferences.component";
 import { UsersManagementComponent } from "./components/controls/users-management.component";
+import { CustomersManagementComponent } from "./components/controls/customers-management.component";
 import { RolesManagementComponent } from "./components/controls/roles-management.component";
 import { RoleEditorComponent } from "./components/controls/role-editor.component";
 
@@ -92,7 +95,7 @@ import { RoleEditorComponent } from "./components/controls/role-editor.component
     AppComponent,
     LoginComponent,
     HomeComponent,
-    CustomersComponent,
+    CustomersComponent,CustomersManagementComponent,
     ProductsComponent,
     OrdersComponent,
     SettingsComponent,
@@ -123,6 +126,8 @@ import { RoleEditorComponent } from "./components/controls/role-editor.component
     NotificationEndpoint,
     AccountService,
     AccountEndpoint,
+    CustomerService,
+    CustomerEndpoint,
     LocalStoreManager,
     EndpointFactory
   ],

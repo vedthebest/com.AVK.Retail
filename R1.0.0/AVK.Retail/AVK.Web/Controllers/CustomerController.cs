@@ -52,7 +52,7 @@ namespace AVK.Web.Controllers
         public async Task<string> Email()
         {
             string recepientName = "QickApp Tester"; //         <===== Put the recepient's name here
-            string recepientEmail = "test@ebenmonney.com"; //   <===== Put the recepient's email here
+            string recepientEmail = "vedthebest@gmail.com"; //   <===== Put the recepient's email here
 
             string message = EmailTemplates.GetTestEmail(recepientName, DateTime.UtcNow);
 

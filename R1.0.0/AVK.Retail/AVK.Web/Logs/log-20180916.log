@@ -1,0 +1,42 @@
+2018-09-16T10:03:00.1835794+05:30 0HLGRHLGM198H:00000003 [INF] "Bearer" was not authenticated. Failure message: "Authentication failed because the access token was expired." (48071232)
+2018-09-16T10:03:00.1835794+05:30 0HLGRHLGM198F:00000002 [INF] "Bearer" was not authenticated. Failure message: "Authentication failed because the access token was expired." (48071232)
+2018-09-16T10:03:00.2762905+05:30 0HLGRHLGM198H:00000003 [INF] AuthenticationScheme: "Bearer" was challenged. (d45f1f38)
+2018-09-16T10:03:00.2762905+05:30 0HLGRHLGM198F:00000002 [INF] AuthenticationScheme: "Bearer" was challenged. (d45f1f38)
+2018-09-16T10:03:00.4487850+05:30 0HLGRHLGM198F:00000003 [INF] The token request was successfully extracted from the HTTP request: "{
+  \"refresh_token\": \"[removed for security reasons]\",
+  \"grant_type\": \"refresh_token\",
+  \"scope\": \"openid email phone profile offline_access roles\"
+}". (ebc01284)
+2018-09-16T10:03:00.4842269+05:30 0HLGRHLGM198F:00000003 [DBG] The token request validation process was partially skipped because the 'client_id' parameter was missing or empty. (fcec36a0)
+2018-09-16T10:03:00.4904669+05:30 0HLGRHLGM198F:00000003 [INF] The token request was successfully validated. (d7e51e65)
+2018-09-16T10:03:01.3561871+05:30 0HLGRHLGM198F:00000003 [DBG] The default token request handling was skipped from user code. (72afae05)
+2018-09-16T10:03:01.6463893+05:30 0HLGRHLGM198F:00000003 [DBG] AuthenticationScheme: "ASOS" was successfully authenticated. (1805f3b3)
+2018-09-16T10:03:03.0682046+05:30 0HLGRHLGM198F:00000003 [INF] The expiration date of the refresh token '"5861d812-92a1-4260-855f-2cb32505a956"' was automatically updated: 09/30/2018 04:33:02 +00:00. (3e1903c1)
+2018-09-16T10:03:03.2871480+05:30 0HLGRHLGM198F:00000003 [DBG] The access token scopes will be limited to the scopes requested by the client application: "openid, email, phone, profile, offline_access, roles". (da314d7b)
+2018-09-16T10:03:03.3247179+05:30 0HLGRHLGM198F:00000003 [DBG] '"AspNet.Identity.SecurityStamp"' was excluded from the access token claims. (ed8f369e)
+2018-09-16T10:03:03.3294899+05:30 0HLGRHLGM198F:00000003 [DBG] '"fullname"' was excluded from the access token claims. (ed8f369e)
+2018-09-16T10:03:03.3341412+05:30 0HLGRHLGM198F:00000003 [DBG] '"email"' was excluded from the access token claims. (ed8f369e)
+2018-09-16T10:03:03.3383562+05:30 0HLGRHLGM198F:00000003 [DBG] '"phone"' was excluded from the access token claims. (ed8f369e)
+2018-09-16T10:03:03.3961370+05:30 0HLGRHLGM198F:00000003 [DBG] '"AspNet.Identity.SecurityStamp"' was excluded from the identity token claims. (7dcd2335)
+2018-09-16T10:03:03.4539798+05:30 0HLGRHLGM198F:00000003 [INF] The token response was successfully returned: "{
+  \"token_type\": \"Bearer\",
+  \"access_token\": \"[removed for security reasons]\",
+  \"expires_in\": 3600,
+  \"id_token\": \"[removed for security reasons]\"
+}". (12d98310)
+2018-09-16T10:03:03.5024853+05:30 0HLGRHLGM198H:00000004 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-09-16T10:03:03.5097927+05:30 0HLGRHLGM198F:00000004 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-09-16T10:07:27.4037777+05:30 0HLGRHNQQ0KIT:00000001 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.TimeoutException: The Angular CLI process did not start listening for requests within the timeout period of 0 seconds. Check the log output for error information.
+   at Microsoft.AspNetCore.SpaServices.Extensions.Util.TaskTimeoutExtensions.WithTimeout[T](Task`1 task, TimeSpan timeoutDelay, String message)
+   at Microsoft.AspNetCore.SpaServices.Extensions.Proxy.SpaProxy.PerformProxyRequest(HttpContext context, HttpClient httpClient, Task`1 baseUriTask, CancellationToken applicationStoppingToken, Boolean proxy404s)
+   at Microsoft.AspNetCore.Builder.SpaProxyingExtensions.<>c__DisplayClass2_0.<<UseProxyToSpaDevelopmentServer>b__0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIIndexMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
